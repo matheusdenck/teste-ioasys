@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:teste_ioasys/modules/theme/app_theme.dart';
 
+import 'widgets/text_field_widget.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -71,53 +73,8 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 16.5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  child:
-                      Text('E-mail', style: AppTheme.textStyle.textFieldFont),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8,
-                  ),
-                  child: SizedBox(
-                    height: 48,
-                    child: CupertinoTextField(
-                      placeholder: '',
-                      decoration: BoxDecoration(
-                        color: AppTheme.colors.textFieldColor,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  child: Text(
-                    'Senha',
-                    style: AppTheme.textStyle.textFieldFont,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8,
-                  ),
-                  child: SizedBox(
-                    height: 48,
-                    child: CupertinoTextField(
-                      placeholder: '',
-                      obscureText: true,
-                      decoration: BoxDecoration(
-                        color: AppTheme.colors.textFieldColor,
-                      ),
-                    ),
-                  ),
-                ),
+                TextFieldWidget(label: 'E-mail'),
+                TextFieldWidget(label: 'Senha'),
                 SizedBox(
                   height: 40,
                 ),

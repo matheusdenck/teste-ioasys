@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'login_state.dart';
-import 'user_model.dart';
+import 'models/user_model.dart';
 
 class LoginController {
   LoginState state = LoginStateEmpty();

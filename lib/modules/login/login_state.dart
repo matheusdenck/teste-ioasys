@@ -1,4 +1,4 @@
-import 'package:teste_ioasys/modules/login/user_model.dart';
+import 'package:teste_ioasys/modules/login/models/user_model.dart';
 
 abstract class LoginState {}
 

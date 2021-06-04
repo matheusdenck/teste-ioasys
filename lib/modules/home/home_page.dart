@@ -19,15 +19,14 @@ class _HomePageState extends State<HomePage> {
             pinned: true,
             expandedHeight: 188,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset('assets/images/background_home.png',
-                  fit: BoxFit.fill),
+              background: Stack(
+                children: [
+                  Image.asset('assets/images/background_home.png',
+                      width: double.maxFinite, fit: BoxFit.fitWidth),
+                  Align(alignment: Alignment(0.0, 1.0), child: SearchWidget()),
+                ],
+              ),
             ),
-          ),
-          SliverToBoxAdapter(
-            child: Container(width: 300, height: 200, color: Colors.black),
-          ),
-          SliverToBoxAdapter(
-            child: SearchWidget(),
           ),
         ],
       ),
