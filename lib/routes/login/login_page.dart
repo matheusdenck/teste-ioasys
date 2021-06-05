@@ -92,7 +92,6 @@ class _LoginPageState extends State<LoginPage> {
                 child: CircularProgressIndicator(
                   strokeWidth: 4,
                   color: Colors.pinkAccent,
-                  value: 0.6,
                 )),
           ),
         );
