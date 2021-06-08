@@ -39,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                   label: 'Senha',
                   controller: passController,
                   isPassword: true,
+                  eye: true,
                 ),
                 SizedBox(
                   height: 40,

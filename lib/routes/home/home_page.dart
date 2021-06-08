@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:teste_ioasys/repositories/enterprise_source.dart';
-import 'package:teste_ioasys/repositories/entities/enterprise_model.dart';
 import 'package:teste_ioasys/routes/home/widgets/enterprise_widget.dart';
 
 import 'widgets/search_widget.dart';

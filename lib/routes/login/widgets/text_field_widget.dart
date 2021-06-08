@@ -2,17 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:teste_ioasys/routes/theme/app_theme.dart';
 
-class TextFieldWidget extends StatelessWidget {
+class TextFieldWidget extends StatefulWidget {
   final String label;
   final TextEditingController controller;
   final bool isPassword;
+  bool eye;
 
   TextFieldWidget({
     required this.label,
     required this.controller,
     this.isPassword = false,
+    this.eye = true,
   });
 
+  @override
+  _TextFieldWidgetState createState() => _TextFieldWidgetState();
+}
+
+class _TextFieldWidgetState extends State<TextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +29,7 @@ class TextFieldWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: 16.0,
           ),
-          child: Text(label, style: AppTheme.textStyle.textFieldFont),
+          child: Text(widget.label, style: AppTheme.textStyle.textFieldFont),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -35,17 +42,22 @@ class TextFieldWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
             ),
             child: CupertinoTextField(
-              suffix: isPassword
-                  ? Padding(
+              obscureText: widget.eye,
+              suffix: widget.isPassword
+                  ? IconButton(
                       padding: const EdgeInsets.all(12.0),
-                      child: Icon(
+                      splashRadius: 24,
+                      iconSize: 24,
+                      onPressed: () {
+                        setState(() => this.widget.eye = !this.widget.eye);
+                      },
+                      icon: Icon(
                         CupertinoIcons.eye_solid,
                         color: Colors.black54,
                       ),
                     )
                   : Container(),
-              obscureText: isPassword,
-              controller: controller,
+              controller: widget.controller,
               placeholder: '',
               decoration: BoxDecoration(
                 color: AppTheme.colors.textFieldColor,
