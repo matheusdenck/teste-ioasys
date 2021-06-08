@@ -34,12 +34,12 @@ class _LoginPageState extends State<LoginPage> {
                 TextFieldWidget(
                   label: 'E-mail',
                   controller: emailController,
+                  eye: false,
                 ),
                 TextFieldWidget(
                   label: 'Senha',
                   controller: passController,
                   isPassword: true,
-                  eye: true,
                 ),
                 SizedBox(
                   height: 40,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:teste_ioasys/routes/description/description_page.dart';
 import 'routes/home/home_page.dart';
 import 'routes/login/login_page.dart';
 import 'routes/splash/splash_page.dart';
@@ -16,6 +17,7 @@ class AppWidget extends StatelessWidget {
         '/splash': (context) => SplashPage(),
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
+        '/description': (context) => DescriptionPage(),
       },
     );
   }

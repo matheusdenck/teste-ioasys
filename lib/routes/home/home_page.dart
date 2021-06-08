@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:teste_ioasys/repositories/enterprise_source.dart';
 import 'package:teste_ioasys/routes/home/widgets/enterprise_widget.dart';
@@ -39,9 +40,17 @@ class _HomePageState extends State<HomePage> {
                   final enterprises = _enterpriseSource.enterprises;
                   return enterprises.length > 0
                       ? ListView.builder(
-                          itemBuilder: (_, i) => EnterpriseWidget(
-                            photoUrl: enterprises[i].photo!,
-                            name: enterprises[i].enterprise_name!,
+                          itemBuilder: (_, i) => GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Get.toNamed('/description',
+                                    arguments: enterprises[i]);
+                              });
+                            },
+                            child: EnterpriseWidget(
+                              photoUrl: enterprises[i].photo!,
+                              name: enterprises[i].enterprise_name!,
+                            ),
                           ),
                           itemCount: enterprises.length,
                           shrinkWrap: true,

@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:teste_ioasys/repositories/config.dart';
 import 'package:teste_ioasys/routes/theme/app_theme.dart';
 
-class EnterpriseWidget extends StatelessWidget {
+class EnterpriseWidget extends StatefulWidget {
   final String photoUrl, name;
 
-  const EnterpriseWidget({Key? key, required this.photoUrl, required this.name})
-      : super(key: key);
+  const EnterpriseWidget({
+    Key? key,
+    required this.photoUrl,
+    required this.name,
+  }) : super(key: key);
 
+  @override
+  _EnterpriseWidgetState createState() => _EnterpriseWidgetState();
+}
+
+class _EnterpriseWidgetState extends State<EnterpriseWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +26,7 @@ class EnterpriseWidget extends StatelessWidget {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
-            Authenticator.baseUrl + photoUrl,
+            Authenticator.baseUrl + widget.photoUrl,
           ),
         ),
         borderRadius: BorderRadius.circular(4),
@@ -26,7 +35,7 @@ class EnterpriseWidget extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              name,
+              widget.name,
               style: AppTheme.textStyle.enterpriseFont,
             ),
           ),
