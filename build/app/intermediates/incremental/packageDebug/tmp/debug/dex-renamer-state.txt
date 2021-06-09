@@ -1,4 +1,4 @@
-#Tue Jun 08 16:23:47 BRT 2021
+#Tue Jun 08 22:05:15 BRT 2021
 base.0=D\:\\dev\\processos\\ioasys\\empresas-flutter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

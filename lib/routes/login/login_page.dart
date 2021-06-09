@@ -21,13 +21,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: CustomScrollView(
         slivers: [
           AppBarWidget(),
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
                 SizedBox(
                   height: 16.5,
                 ),
@@ -85,16 +85,31 @@ class _LoginPageState extends State<LoginPage> {
         showDialog(
           context: context,
           builder: (_) => AlertDialog(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            content: Container(
-                width: 20,
-                height: 50,
-                child: CircularProgressIndicator(
-                  strokeWidth: 4,
-                  color: Colors.pinkAccent,
-                )),
-          ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              content: Center(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    SizedBox(
+                      height: 72,
+                      width: 72,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3,
+                        color: AppTheme.colors.loadingCircle,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 47,
+                      width: 47,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3,
+                        color: AppTheme.colors.loadingCircle,
+                      ),
+                    ),
+                  ],
+                ),
+              )),
         );
       }
     } else {
